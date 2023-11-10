@@ -15,8 +15,8 @@ module.exports = env => {
         target: ["web", "es5"],
         output: {
             filename: "[name].[fullhash].js",
-            path: path.join(__dirname, "build/dist"),
-            pablicPath: "/",
+            path: path.join(__dirname, "build"),
+            publicPath: "/",
         },
         plugins: [
             new CleanWebpackPlugin(),
