@@ -1,0 +1,20 @@
+.content {
+    flex: 1 0;
+    width: 100%;
+    margin-left: 300px;
+    height: calc(100vh - var(--toolbar-height));
+    overflow: hidden;
+    transition: all 0.5s ease;
+    background-color: var(--bg-color);
+}
+
+.content.hiddenBar {
+    margin-left: 44px;
+    height: calc(100vh - 80px);
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-left: 44px;
+    }
+}

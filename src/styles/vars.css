@@ -1,0 +1,72 @@
+:root {
+    /* Colors */
+    --primary-color: #2d8fc2;
+    --main-border-color: #dadee0;
+    --color-hover: #f4f5f9;
+
+    --secondary-color: #fff;
+
+    --color-grey-light: #e6e6e6;
+    --color-border: #cccccc;
+    --color-red: #e51836;
+    --color-red-light: rgba(238, 0, 41, 0.5);
+    --color-blue: #0086d6;
+    --color-yellow: #ffbb00;
+    --color-black: #262626;
+    --color-white: #ffffff;
+
+    --color-grey-text: #9f9f9f;
+
+    --color-grey-font: #818e94;
+    --color-grey-disabled: #f4f5f9;
+    --color-grey-disabled-rgba: rgba(234, 234, 234, 0.5);
+
+    /* Fonts */
+    --font-family: "Montserrat", sans-serif;
+
+    /* Typography */
+    --font-size-12: 12px;
+    --font-size-14: 14px;
+    --font-size-base: 16px;
+    --font-size-18: 18px;
+    --font-size-24: 24px;
+    --font-size-32: 32px;
+
+    /* Borders */
+    --border: solid 1px var(--color-border);
+    --radius-4: 4px;
+    --radius-6: 6px;
+    --radius-10: 10px;
+
+    /* Shadows */
+    --box-shadow: 2px 4px 8px rgba(255, 255, 255, 0.15);
+    --box-shadow-hard: 0 4px 4px rgba(0, 0, 0, 0.15);
+
+    /* Size */
+    --sidebar-width: 300px;
+    --sidebar-width-collapsed: 44px;
+    --toolbar-height: 80px;
+
+    /* Transform */
+    --transform-translate: translateY(var(--spacing-neg-1));
+
+    /* Z-index */
+    --zindex-tooltip: 10;
+    --zindex-item: 20;
+    --zindex-input-calendar: 10;
+    --zindex-popup: 100;
+
+    /* Spacing */
+    --spacing-1: 8px;
+    --spacing-2: 16px;
+    --spacing-3: 24px;
+    --spacing-4: 32px;
+    --spacing-5: 40px;
+    --spacing-6: 48px;
+    --spacing-7: 56px;
+    --spacing-8: 64px;
+    --spacing-9: 72px;
+    --spacing-10: 80px;
+    --spacing-11: 88px;
+    --spacing-12: 96px;
+}

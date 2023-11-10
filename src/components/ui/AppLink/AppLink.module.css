@@ -1,0 +1,7 @@
+.appLink {
+    color: #1c1c1e;
+}
+
+.itemActive {
+    border-right: 3px solid var(--primary-color);
+}

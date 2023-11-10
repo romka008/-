@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@components/*": ["src/components/ui/*"],
+            "@assets/*": ["src/assets/*"],
+            "@api/*": ["src/components/api/*"],
+            "@core/*": ["src/components/core/*"],
+            "@views/*": ["src/components/views/*"],
+            "@modules/*": ["src/components/modules/*"],
+            "@model/*": ["src/model/*"],
+            "@store/*": ["src/store/*"],
+            "@styles/*": ["src/styles/*"],
+            "@public/*": ["public/*"],
+            "@utils/*": ["src/utils/*"]
+        },
+        "module": "ES2020",
+        "target": "ES6",
+        "strict": true,
+        "noImplicitThis": false,
+        "noEmitOnError": true,
+        "outDir": "dist",
+        "allowSyntheticDefaultImports": true,
+        "pretty": true,
+        "allowJs": true,
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "jsx": "react-jsxdev",
+        "lib": ["ES2020", "dom"]
+    },
+    "exclude": ["node_modules"],
+    "include": ["**/*.ts", "./src/**/*.tsx"]
+}

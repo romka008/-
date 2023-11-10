@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #dadee0;
+    font-family: Roboto, sans-serif;
+    line-height: 32px;
+    font-size: var(--font-size-18);
+    color: var(--color-red);
+    box-shadow: 0 5px 20px 0 rgba(105, 105, 105, 0.5);
+    padding: var(--spacing-4) var(--spacing-5);
+}
