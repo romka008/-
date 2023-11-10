@@ -15,27 +15,28 @@ module.exports = env => {
         target: ["web", "es5"],
         output: {
             filename: "[name].[fullhash].js",
-            path: path.join(__dirname, "build/dist")
+            path: path.join(__dirname, "build/dist"),
+            pablicPath: "/",
         },
         plugins: [
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
                 template: "./src/index.html",
-                favicon: "./src/favicon.ico"
+                favicon: "./src/favicon.ico",
             }),
-            new MiniCssExtractPlugin()
+            new MiniCssExtractPlugin(),
         ],
         ...(isDev
             ? null
             : {
-                  performance: {
-                      hints: false,
-                      maxEntrypointSize: 512000,
-                      maxAssetSize: 512000
-                  }
-              }),
+                performance: {
+                    hints: false,
+                    maxEntrypointSize: 512000,
+                    maxAssetSize: 512000,
+                },
+            }),
         optimization: {
-            minimizer: [new CssMinimizerPlugin()]
+            minimizer: [new CssMinimizerPlugin()],
         },
 
         resolve: {
@@ -51,30 +52,30 @@ module.exports = env => {
                 "@store": path.resolve(__dirname, "src/store/"),
                 "@styles": path.resolve(__dirname, "src/styles/"),
                 "@public": path.resolve(__dirname, "public/"),
-                "@utils": path.resolve(__dirname, "src/utils/")
-            }
+                "@utils": path.resolve(__dirname, "src/utils/"),
+            },
         },
         module: {
             rules: [
                 {
                     test: /\.js$/,
                     enforce: "pre",
-                    use: ["source-map-loader"]
+                    use: ["source-map-loader"],
                 },
                 {
                     test: /\.(js|ts|tsx)$/,
                     exclude: /node_modules/,
                     use: [
                         {
-                            loader: "babel-loader"
-                        }
-                    ]
+                            loader: "babel-loader",
+                        },
+                    ],
                 },
                 {
                     test: /\.css$/,
                     use: [
                         {
-                            loader: MiniCssExtractPlugin.loader
+                            loader: MiniCssExtractPlugin.loader,
                         },
                         {
                             loader: "css-loader",
@@ -83,17 +84,19 @@ module.exports = env => {
                                 sourceMap,
                                 modules: {
                                     auto: resPath => Boolean(resPath.includes(".module.")),
-                                    localIdentName: isDev ? "[name]__[local]___[hash:base64:5]" : "[hash:base64:8]"
-                                }
-                            }
+                                    localIdentName: isDev
+                                        ? "[name]__[local]___[hash:base64:5]"
+                                        : "[hash:base64:8]",
+                                },
+                            },
                         },
                         {
                             loader: "postcss-loader",
                             options: {
-                                sourceMap
-                            }
-                        }
-                    ]
+                                sourceMap,
+                            },
+                        },
+                    ],
                 },
                 {
                     test: /\.(gif|png|jpe?g)$/i,
@@ -101,10 +104,10 @@ module.exports = env => {
                         {
                             loader: "file-loader",
                             options: {
-                                name: "./img/[name].[ext]"
-                            }
-                        }
-                    ]
+                                name: "./img/[name].[ext]",
+                            },
+                        },
+                    ],
                 },
                 {
                     test: /\.(ico)$/i,
@@ -112,19 +115,19 @@ module.exports = env => {
                         {
                             loader: "file-loader",
                             options: {
-                                name: "./[name].[ext]"
-                            }
-                        }
-                    ]
+                                name: "./[name].[ext]",
+                            },
+                        },
+                    ],
                 },
                 {
                     test: /\.svg$/,
-                    use: ["@svgr/webpack"]
-                }
-            ]
+                    use: ["@svgr/webpack"],
+                },
+            ],
         },
         devServer: {
-            historyApiFallback: true
-        }
+            historyApiFallback: true,
+        },
     };
 };
